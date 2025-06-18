@@ -1,8 +1,8 @@
 export const TaskList = ({ ...rest }) => {
   return (
-    <div style={{ fontSize: '18px', color: '#000'}}>
+    <div style={{ fontSize: '17px', color: '#000', display:"flex", flexDirection:"column", gap:'3px' }}>
       <p>TaskList : </p>
-      <ol className="list" style={{ lineHeight: "1.5" }}>
+      <ol className="list" style={{ lineHeight: "2" }}>
         {rest.tasks.map((task, index) => (
           <li key={index} className="">
             {task}
