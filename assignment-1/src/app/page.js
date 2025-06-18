@@ -5,6 +5,7 @@ import { UserCard } from "@/component/UserCard";
 import { Weather } from "@/component/Weather";
 import { Counter } from "@/component/Counter";
 import { TaskList } from "@/component/TaskList";
+import { Button } from "@/component/Button";
 
 export default function Home() {
   return (
@@ -97,13 +98,13 @@ export default function Home() {
       <hr className="line" />
       <div className="quest6">
         <p>
-          Q6 .Create a functional component named Button that accepts props for
+          Q6. Create a functional component named Button that accepts props for
           text and color. Style the button using inline styles or CSS classes
           based on the color prop. Import and render the Button component in the
           App component with different text and color props.
         </p>
         <div>
-         
+          <Button text = {"This is red"} color = {'red'}/>
         </div>
       </div>
       <hr className="line" />
