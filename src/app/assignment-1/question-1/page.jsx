@@ -1,4 +1,3 @@
-// import { Greeting } from "@/component/Greeting";
 import { Greeting } from "@/component";
 const Greet = () => {
   return (
