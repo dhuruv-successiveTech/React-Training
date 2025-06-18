@@ -62,8 +62,9 @@ x .increment,
 .link {
   display: flex;
   gap: 1rem;
+  width: 100%;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   padding: 1rem;
 }
 
@@ -111,10 +112,3 @@ x .increment,
   margin-top: 10px;
 }
 
-.counter {
-  width: 100%;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}

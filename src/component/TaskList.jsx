@@ -1,4 +1,4 @@
-export const TaskList = ({ ...rest }) => {
+const TaskList = ({ ...rest }) => {
   return (
     <div style={{ fontSize: '17px', color: '#000', display:"flex", flexDirection:"column", gap:'3px' }}>
       <p>TaskList : </p>
@@ -12,3 +12,5 @@ export const TaskList = ({ ...rest }) => {
     </div>
   );
 };
+
+export default TaskList;

@@ -1,4 +1,4 @@
-import { Counter } from "@/component/Counter";
+import { Counter } from "@/component";
 
 const IncrementDecrement = () => {
   return (

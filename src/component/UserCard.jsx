@@ -1,6 +1,6 @@
 // import image from '../assets/img.jpg'
 
-export const UserCard = ({ name, email, avatarURL }) => {
+const UserCard = ({ name, email, avatarURL }) => {
   return (
     <div className="card">
       <div className="my-name">Name : {name}</div>
@@ -9,3 +9,4 @@ export const UserCard = ({ name, email, avatarURL }) => {
     </div>
   );
 };
+export default UserCard;

@@ -1,4 +1,4 @@
-import { UserCard } from "@/component/UserCard";
+import { UserCard } from "@/component";
 
 const UserDetails = () => {
   return (

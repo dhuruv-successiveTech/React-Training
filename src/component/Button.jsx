@@ -1,4 +1,4 @@
-export const Button = ({ text, color }) => {
+const Button = ({ text, color }) => {
   const style = {
     backgroundColor: color,
     color: "white",
@@ -11,3 +11,5 @@ export const Button = ({ text, color }) => {
   };
   return <button style={style}>{text}</button>;
 };
+
+export default Button;

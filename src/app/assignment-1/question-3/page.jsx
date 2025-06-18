@@ -1,5 +1,5 @@
 "use client";
-import { Weather } from "@/component/Weather";
+import { Weather } from "@/component";
 import { useState } from "react";
 
 const WeatherCheck = () => {

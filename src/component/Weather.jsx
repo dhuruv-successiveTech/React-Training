@@ -1,4 +1,4 @@
-export const Weather = ({ temperature }) => {
+const Weather = ({ temperature }) => {
   return (
     temperature!=="" ? (
         temperature > 25 ? (
@@ -57,3 +57,5 @@ export const Weather = ({ temperature }) => {
 
 )
 };
+
+export default Weather;
