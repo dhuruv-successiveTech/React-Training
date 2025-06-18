@@ -1,9 +1,9 @@
 import { UserCard } from "@/component/UserCard";
-import './page.module.css'
+
 const UserDetails = () => {
   return (
     <>
-      <p>
+      <p className="question">
         Q2. Create a functional component named UserCard that accepts the
         following props: name, email, and avatarURL. Use the props to display
         the user's name, email, and an image (avatar) in the UserCard component.
@@ -12,7 +12,7 @@ const UserDetails = () => {
       </p>
       <div className="usercard">
         <UserCard
-          name={"Manoj Doe"}
+          name={"Manoj Dey"}
           email={"manojDoe@gmail.com"}
           avatarURL={"/assets/img1.jpg"}
         />
@@ -27,7 +27,7 @@ const UserDetails = () => {
           avatarURL={"/assets/img3.jpg"}
         />
         <UserCard
-          name={"yash"}
+          name={"Yash"}
           email={"yash@gmail.com"}
           avatarURL={"/assets/img4.jpg"}
         />

@@ -18,27 +18,39 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const style = {
+    backgroundColor: "blue ",
+    color: "white",
+    fontSize: "0.8rem",
+    padding: 10,
+    cursor:"pointer",
+    border:'none',
+    borderRadius: "9px",
+  };
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="">
+        <div className="link">
+          <Link href="/">
+            <button style={style}>Home</button>
+          </Link>
           <Link href="/assignment-1/question-1">
-            <button>Question 1</button>
+            <button style={style}>Question 1</button>
           </Link>
           <Link href="/assignment-1/question-2">
-            <button>Question 2</button>
+            <button style={style}>Question 2</button>
           </Link>
           <Link href="/assignment-1/question-3">
-            <button>Question 3</button>
+            <button style={style}>Question 3</button>
           </Link>
           <Link href="/assignment-1/question-4">
-            <button>Question 4</button>
+            <button style={style}>Question 4</button>
           </Link>
           <Link href="/assignment-1/question-5">
-            <button>Question 5</button>
+            <button style={style}>Question 5</button>
           </Link>
           <Link href="/assignment-1/question-6">
-            <button>Question 6</button>
+            <button style={style}>Question 6</button>
           </Link>
         </div>
         {children}

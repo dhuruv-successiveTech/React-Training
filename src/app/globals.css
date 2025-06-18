@@ -33,14 +33,12 @@ a {
   text-decoration: none;
 }
 
-
-.wrapper {
+.question {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width:100vw;
-  gap: 2rem;
+ 
+  font-size: large;
+  margin: 1rem;
 }
 
 .list {
@@ -48,17 +46,25 @@ a {
   padding-left: 20px; /* Optional: Adds some padding to give space for the circles */
 }
 
-.taskList{
+.taskList {
   display: flex;
   flex-direction: column;
-  gap:1rem
+  gap: 1rem;
 }
-.quest5{
+.quest5 {
   display: flex;
-}x
-
-.increment, .decrement {
+}
+x .increment,
+.decrement {
   padding: 0.5rem;
+}
+
+.link {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
 }
 
 .card {
@@ -75,22 +81,16 @@ a {
   gap: 10px;
 }
 
-.usercard{
+.usercard {
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   gap: 2rem;
 }
- .quest1,.quest2, .quest3, .quest4, .quest5{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
- }
 
-.line {
-  width: 100%;
-}
+
+
 
 .my-name {
   font-size: 18px;
@@ -111,7 +111,7 @@ a {
   margin-top: 10px;
 }
 
-.counter{
+.counter {
   width: 100%;
   gap: 1rem;
   align-items: center;

@@ -1,7 +1,3 @@
 export const Greeting = () => {
-    return (
-        <div className="">
-            <h1>Hello World</h1>
-        </div>
-    )
-}
+  return <h1 style={{ margin: "1rem" }}>Hello, Next.js!</h1>;
+};

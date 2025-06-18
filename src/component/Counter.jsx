@@ -11,10 +11,10 @@ export const Counter = () =>{
         setValue(()=>value-1)
     }
     return (
-        <div className="counter">
-            <button className="increment" onClick={decrement}>-</button>
-            <div className="">{value}</div>
-            <button className="decrement" onClick={increment}>+</button>
-        </div>
+        <>
+            <button style={{padding:'0.6rem', fontSize:"1rem"}} onClick={decrement}>-</button>
+            <div >{value}</div>
+            <button style={{padding:'0.6rem', fontSize:"1rem"}} onClick={increment}>+</button>
+        </>
     )
 }
