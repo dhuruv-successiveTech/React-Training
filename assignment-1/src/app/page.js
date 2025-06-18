@@ -8,6 +8,12 @@ import { TaskList } from "@/component/TaskList";
 import { Button } from "@/component/Button";
 
 export default function Home() {
+  const list = [
+    "Attending react session",
+    "Comleting assignment",
+    "Raise Pull Request",
+    "Get your PR reviewed",
+  ];
   return (
     <div className="wrapper">
       <div className="quest1">
@@ -86,14 +92,7 @@ export default function Home() {
           component with an array of tasks.
         </p>
 
-        <TaskList
-          tasks={[
-            "Attending react session",
-            "Comleting assignment",
-            "Raise Pull Request",
-            "Get your PR reviewed",
-          ]}
-        />
+        <TaskList tasks={list} />
       </div>
       <hr className="line" />
       <div className="quest6">
@@ -104,7 +103,7 @@ export default function Home() {
           App component with different text and color props.
         </p>
         <div>
-          <Button text = {"This is red"} color = {'red'}/>
+          <Button text={"This is red"} color={"red"} />
         </div>
       </div>
       <hr className="line" />
