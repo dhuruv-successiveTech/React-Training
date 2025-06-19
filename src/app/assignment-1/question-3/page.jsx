@@ -1,6 +1,4 @@
-"use client";
 import { Weather } from "@/components";
-import { useState } from "react";
 
 const WeatherCheck = () => {
   return (

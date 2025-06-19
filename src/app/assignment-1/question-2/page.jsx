@@ -16,7 +16,7 @@ const UserDetails = () => {
             key={index}
             name={item.name}
             email={item.email}
-            avatarURL={item.url}
+            avatarURL={item.avatarURL}
           ></UserCard>
         ))}
       </div>
