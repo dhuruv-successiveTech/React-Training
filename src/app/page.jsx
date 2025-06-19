@@ -21,14 +21,7 @@ export default function Home() {
         justifyContent: "center",
       }}
     >
-      <div className="link">
-        <Link href="/assignment-1">
-          <button style={style}>Assignment Day 1</button>
-        </Link>
-        <Link href="/assignment-2">
-          <button style={style}>Assignment Day 2</button>
-        </Link>
-      </div>
+
       Welcome To Assignments
     </h1>
   );
