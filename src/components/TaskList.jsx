@@ -1,3 +1,5 @@
+"use client"
+
 const TaskList = ({ ...rest }) => {
   return (
     <div style={{ fontSize: '17px', color: '#000', display:"flex", flexDirection:"column", gap:'3px' }}>

@@ -1,4 +1,4 @@
-import { Counter } from "@/component";
+import { Counter } from "@/components";
 
 const IncrementDecrement = () => {
   return (
@@ -9,7 +9,14 @@ const IncrementDecrement = () => {
         for the "Increment" and "Decrement" buttons to increase and decrease the
         count. Display the updated count on the screen.
       </p>
-      <div style={{display:"flex", alignItems:'center', gap:"0.5rem", justifyContent:'center'}}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          justifyContent: "center",
+        }}
+      >
         <Counter />
       </div>
     </>

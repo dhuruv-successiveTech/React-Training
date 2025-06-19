@@ -1,4 +1,4 @@
-import { Greeting } from "@/component";
+import { Greeting } from "@/components";
 const Greet = () => {
   return (
     <>

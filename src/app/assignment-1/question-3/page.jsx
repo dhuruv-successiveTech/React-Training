@@ -1,14 +1,8 @@
 "use client";
-import { Weather } from "@/component";
+import { Weather } from "@/components";
 import { useState } from "react";
 
 const WeatherCheck = () => {
-  const [temperature, setTemperature] = useState(0);
-
-  const handleTemperatureChange = (e) => {
-    setTemperature(e.target.value); // Convert to number
-  };
-
   return (
     <>
       <p className="question">
@@ -27,17 +21,7 @@ const WeatherCheck = () => {
           gap: "0.5rem",
         }}
       >
-        <div style={{display:"flex", gap:"1rem"}}>
-          Temperature :
-          <select onChange={handleTemperatureChange} value={temperature}>
-            <option value="">Select Temp</option>
-            <option value="0">0</option>
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="30">30</option>
-          </select>
-        </div>
-        <Weather temperature={temperature} />
+        <Weather temperature={[9, 20, 25, 35]} />
       </div>
     </>
   );

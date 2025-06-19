@@ -1,4 +1,4 @@
-import { TaskList } from "@/component";
+import { TaskList } from "@/components";
 
 const Tasks = () => {
   const list = [

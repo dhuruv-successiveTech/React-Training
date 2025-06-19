@@ -1,5 +1,5 @@
-import { UserCard } from "@/component";
-
+import { UserCard } from "@/components";
+import data from "./data";
 const UserDetails = () => {
   return (
     <>
@@ -11,26 +11,14 @@ const UserDetails = () => {
         data.
       </p>
       <div className="usercard">
-        <UserCard
-          name={"Manoj Dey"}
-          email={"manojDoe@gmail.com"}
-          avatarURL={"/assets/img1.jpg"}
-        />
-        <UserCard
-          name={"Dhuruv"}
-          email={"dhruvdk02@gmail.com"}
-          avatarURL={"/assets/img2.jpg"}
-        />
-        <UserCard
-          name={"Abhijeet"}
-          email={"abhijeetkk@gmail.com"}
-          avatarURL={"/assets/img3.jpg"}
-        />
-        <UserCard
-          name={"Yash"}
-          email={"yash@gmail.com"}
-          avatarURL={"/assets/img4.jpg"}
-        />
+        {data.map((item, index) => (
+          <UserCard
+            key={index}
+            name={item.name}
+            email={item.email}
+            avatarURL={item.url}
+          ></UserCard>
+        ))}
       </div>
     </>
   );

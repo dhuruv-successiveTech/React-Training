@@ -1,4 +1,4 @@
-// import image from '../assets/img.jpg'
+"use client"
 
 const UserCard = ({ name, email, avatarURL }) => {
   return (
