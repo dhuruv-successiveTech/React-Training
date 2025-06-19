@@ -1,4 +1,4 @@
-import { Counter } from "@/components";
+import { Counter } from "@/components/assignment-1";
 
 const IncrementDecrement = () => {
   return (

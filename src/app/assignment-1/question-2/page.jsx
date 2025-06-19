@@ -1,4 +1,4 @@
-import { UserCard } from "@/components";
+import { UserCard } from "@/components/assignment-1";
 import data from "./data";
 const UserDetails = () => {
   return (
