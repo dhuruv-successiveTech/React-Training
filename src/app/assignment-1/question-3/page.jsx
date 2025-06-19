@@ -1,4 +1,4 @@
-import { Weather } from "@/components";
+import { Weather } from "@/components/assignment-1";
 
 const WeatherCheck = () => {
   return (

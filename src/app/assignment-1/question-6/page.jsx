@@ -1,4 +1,4 @@
-import { Button } from "@/components";
+import { Button } from "@/components/assignment-1";
 import data from "./data";
 
 const StyleButton = () => {
