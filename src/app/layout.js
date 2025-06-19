@@ -23,34 +23,19 @@ export default function RootLayout({ children }) {
     color: "white",
     fontSize: "0.8rem",
     padding: 10,
-    cursor:"pointer",
-    border:'none',
+    cursor: "pointer",
+    border: "none",
     borderRadius: "9px",
   };
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className="link">
-          <Link href="/">
-            <button style={style}>Home</button>
+          <Link href="/assignment-1">
+            <button style={style}>Assignment Day 1</button>
           </Link>
-          <Link href="/assignment-1/question-1">
-            <button style={style}>Question 1</button>
-          </Link>
-          <Link href="/assignment-1/question-2">
-            <button style={style}>Question 2</button>
-          </Link>
-          <Link href="/assignment-1/question-3">
-            <button style={style}>Question 3</button>
-          </Link>
-          <Link href="/assignment-1/question-4">
-            <button style={style}>Question 4</button>
-          </Link>
-          <Link href="/assignment-1/question-5">
-            <button style={style}>Question 5</button>
-          </Link>
-          <Link href="/assignment-1/question-6">
-            <button style={style}>Question 6</button>
+          <Link href="/assignment-2">
+            <button style={style}>Assignment Day 2</button>
           </Link>
         </div>
         {children}

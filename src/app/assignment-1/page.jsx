@@ -9,7 +9,7 @@ export default function Home() {
         justifyContent: "center",
       }}
     >
-      Welcome To Assignments
+      Welcome To Assignment 1
     </h1>
   );
 }
