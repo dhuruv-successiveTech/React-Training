@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/assignment-1";
 import data from "./data";
 
@@ -18,8 +19,8 @@ const StyleButton = () => {
           justifyContent: "center",
         }}
       >
-        {data.map((item) => (
-          <Button text={item.text} color={item.color}></Button>
+        {data.map((item, index) => (
+          <Button key={index} text={item.text} color={item.color} />
         ))}
       </div>
     </>
