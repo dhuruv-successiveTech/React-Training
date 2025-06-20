@@ -1,4 +1,4 @@
-import Clock from "@/components/assignment-2/question-6/Clock";
+import Clock from "@/components/assignment-2/Clock";
 
 const Timer = () => {
   return (

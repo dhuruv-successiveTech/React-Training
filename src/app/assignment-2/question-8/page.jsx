@@ -1,5 +1,5 @@
-import Notification from "@/components/assignment-2/question-7/Notification";
-import Slideshow from "@/components/assignment-2/question-8/Slideshow";
+import Notification from "@/components/assignment-2/Notification";
+import Slideshow from "@/components/assignment-2/Slideshow";
 
 const ImageSlideShow = () => {
   return (

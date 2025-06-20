@@ -1,5 +1,5 @@
 
-import CounterWithStep from "@/components/assignment-2/question-5/CounterWithStep";
+import CounterWithStep from "@/components/assignment-2/CounterWithStep";
 
 const CounterStep = () => {
   return (

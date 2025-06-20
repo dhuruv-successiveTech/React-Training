@@ -1,4 +1,4 @@
-import RandomNumberGenerator from "@/components/assignment-2/question-4/RandomNumberGenerator";
+import RandomNumberGenerator from "@/components/assignment-2/RandomNumberGenerator";
 
 
 const RandomNumber = () => {
