@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Manoj Dey",
+    "email": "manojDoe@gmail.com",
+    "avatarURL": "/assets/img1.jpg"
+  },
+  {
+    "name": "Dhuruv",
+    "email": "dhruvdk02@gmail.com",
+    "avatarURL": "/assets/img2.jpg"
+  },
+  {
+    "name": "Abhijeet",
+    "email": "abhijeetkk@gmail.com",
+    "avatarURL": "/assets/img3.jpg"
+  },
+  {
+    "name": "Yash",
+    "email": "yash@gmail.com",
+    "avatarURL": "/assets/img4.jpg"
+  }
+]
