@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { redirect } from 'next/navigation'
 
 export default function Home() {
   const style = {
@@ -10,6 +10,7 @@ export default function Home() {
     border: "none",
     borderRadius: "9px",
   };
+  redirect('/assignment-1')
   return (
     <h1
       style={{
@@ -21,7 +22,7 @@ export default function Home() {
         justifyContent: "center",
       }}
     >
-
+      
       Welcome To Assignments
     </h1>
   );

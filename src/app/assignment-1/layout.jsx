@@ -1,16 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
+
 import "../globals.css";
 import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -33,9 +25,6 @@ export default function RootLayout({ children }) {
         <div className="link">
           <Link href="/assignment-1">
             <button style={style}>Assignment Day 1</button>
-          </Link>
-          <Link href="/assignment-2">
-            <button style={style}>Assignment Day 2</button>
           </Link>
         </div>
         <div className="link">
