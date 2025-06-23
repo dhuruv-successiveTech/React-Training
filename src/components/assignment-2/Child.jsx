@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Child = ({ count, onIncrement, onReset }) => {
+const Child = React.memo(({ count, onIncrement, onReset }) => {
   return (
     <div style={{ border: '1px solid #ccc', padding: '15px', marginTop: '10px' }}>
       <h3>Child Component</h3>
@@ -13,6 +13,6 @@ const Child = ({ count, onIncrement, onReset }) => {
       </button>
     </div>
   );
-};
+});
 
 export default Child;

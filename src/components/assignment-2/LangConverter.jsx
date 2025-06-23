@@ -1,11 +1,11 @@
 "use client";
 
-import { ThemeContext } from "@/context/ThemeContext";
+import { LanguageContext } from "@/context/LanguageContext";
 import { useContext } from "react";
 
 const LangConverter = () => {
-  const { currentLang, languageConverter, setConvertedLang } =
-    useContext(ThemeContext);
+  const { currentLang, languageConverter } =
+    useContext(LanguageContext);
 
   return (
     <div style={{ width: "100%", height: "100%" }}>
@@ -16,8 +16,7 @@ const LangConverter = () => {
           ? `Convert to Spanish`
           : `Convert to English`}
       </button>
-      <input type="text" />
-      <h1>{currentLang}</h1>
+      <input type="text" value={currentLang}/>
     </div>
   );
 };

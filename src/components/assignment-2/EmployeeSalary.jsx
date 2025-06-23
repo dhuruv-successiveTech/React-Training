@@ -4,14 +4,13 @@ import React, { useState, useMemo } from "react";
 
 const EmployeeSalary = () => {
   const [employees, setEmployees] = useState([
-    { name: "Alice", salary: 50000 },
-    { name: "Bob", salary: 60000 },
-    { name: "Charlie", salary: 55000 },
+    { name: "Raj", salary: 50000 },
+    { name: "Shekhar", salary: 60000 },
+    { name: "Jitesh", salary: 55000 },
   ]);
 
-  // Calculate average salary using useMemo
   const averageSalary = useMemo(() => {
-    console.log("Calculating average salary...");
+    console.log("Calculating average salary");
     const total = employees.reduce((sum, emp) => sum + emp.salary, 0);
     return (total / employees.length).toFixed(2);
   }, [employees]);

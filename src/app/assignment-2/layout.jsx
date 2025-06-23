@@ -3,6 +3,7 @@ import "../globals.css";
 import Link from "next/link";
 import data from "./data";
 import CartProvider from "@/context/CartContext";
+import LanguageProvider from "@/context/LanguageContext";
 
 export default function RootLayout({ children }) {
   const style = {
@@ -25,7 +26,7 @@ export default function RootLayout({ children }) {
         ))}
       </div>
       <ThemeProvider>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider><LanguageProvider>{children}</LanguageProvider></CartProvider>
       </ThemeProvider>
     </>
   );

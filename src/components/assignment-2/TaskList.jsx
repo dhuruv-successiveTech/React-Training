@@ -4,12 +4,11 @@ import { useState, useCallback } from 'react';
 const TaskList = () => {
   // Initial list of tasks
   const [tasks, setTasks] = useState([
-    { id: 1, text: 'Task 1', completed: false },
-    { id: 2, text: 'Task 2', completed: false },
-    { id: 3, text: 'Task 3', completed: false },
+    { id: 1, text: 'Task 1 ', completed: false },
+    { id: 2, text: 'Task 2 ', completed: false },
+    { id: 3, text: 'Task 3 ', completed: false },
   ]);
 
-  // useCallback to avoid unnecessary re-renders
   const handleComplete = useCallback((taskId) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -25,10 +24,10 @@ const TaskList = () => {
         {tasks.map((task) => (
           <li key={task.id}>
             <span>
-              {task.completed?`${task.text} completed`:task.text}
+              {task.completed?`${task.text} completed `:task.text}
             </span>
             {!task.completed && (
-              <button onClick={() => handleComplete(task.id)}>Complete</button>
+              <button onClick={() => handleComplete(task.id)}>Complete </button>
             )}
           </li>
         ))}
