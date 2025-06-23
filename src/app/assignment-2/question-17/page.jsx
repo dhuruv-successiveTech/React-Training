@@ -1,17 +1,15 @@
-import EmployeeSalary from "@/components/assignment-2/EmployeeSalary";
-import Parent from "@/components/assignment-2/Parent";
-import StudentList from "@/components/assignment-2/StudentList";
-import TaskList from "@/components/assignment-2/TaskList";
+import CopyClipboard from "@/components/assignment-2/CopyClipboard";
 
-const Employee = () => {
+const ClipboardCopy = () => {
   return (
     <>
       <p className="question">
-        Q15. Create a functional component named StudentList that displays a
-        list of student names.. Define an array of student names as a constant
-        within the component. Use the useMemo hook to memoize the list of
-        student names. Render the list of student names on the screen. Include a
-        button that, when clicked, appends a new student name to the list.
+        Q17. Build a custom hook named useClipboard for copying text to the
+        clipboard. Implement a useClipboard hook that takes a text value as a
+        parameter. Use the document.execCommand API to copy the provided text to
+        the clipboard. Return a success status and methods to trigger the
+        copying action. Develop a component that uses the useClipboard hook to
+        provide a copy button for text.
       </p>
       <div
         style={{
@@ -21,10 +19,10 @@ const Employee = () => {
           justifyContent: "center",
         }}
       >
-        
+        <CopyClipboard/>
       </div>
     </>
   );
 };
 
-export default Employee;
+export default ClipboardCopy;

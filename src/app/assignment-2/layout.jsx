@@ -6,22 +6,32 @@ import CartProvider from "@/context/CartContext";
 import LanguageProvider from "@/context/LanguageContext";
 
 export default function RootLayout({ children }) {
-  const style = {
-    backgroundColor: "blue ",
+  // Define the common button styles as a reusable style object
+  const buttonStyle = {
+    backgroundColor: "blue",
     color: "white",
     fontSize: "0.8rem",
-    padding: 10,
+    padding: "10px",
+    margin: "0.1rem",
     cursor: "pointer",
     border: "none",
     borderRadius: "9px",
   };
 
+  // Define the wrapper styles
+  const wrapperStyle = {
+    overflowX: "scroll",
+    marginInline: "auto",
+    display: "flex",
+    gap: "10px", // space between the buttons
+  };
+
   return (
     <>
-      <div className="link">
+      <div style={wrapperStyle}>
         {data.map((item, index) => (
           <Link key={index} href={item.link}>
-            <button style={style}>{item.text}</button>
+            <button style={buttonStyle}>{item.text}</button>
           </Link>
         ))}
       </div>
