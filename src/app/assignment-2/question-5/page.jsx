@@ -1,4 +1,3 @@
-
 import CounterWithStep from "@/components/assignment-2/CounterWithStep";
 
 const CounterStep = () => {

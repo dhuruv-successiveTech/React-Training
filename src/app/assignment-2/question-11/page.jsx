@@ -1,6 +1,4 @@
 import Cart from "@/components/assignment-2/Cart";
-import LangConverter from "@/components/assignment-2/LangConverter";
-
 
 const ShoppingCart = () => {
   return (

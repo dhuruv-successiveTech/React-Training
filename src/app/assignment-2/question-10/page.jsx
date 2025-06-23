@@ -1,15 +1,14 @@
 import LangConverter from "@/components/assignment-2/LangConverter";
-import Theme from "@/components/assignment-2/Theme";
 
-const EnglishToSpanish = () => {
+const LanguageConverter = () => {
   return (
     <>
       <p className="question">
-        Q. Create a theme switcher application using the useContext hook.
-        Create a context to manage the current theme (e.g., light or dark).
-        Provide a button to toggle between the two themes. Use the useContext
-        hook to access the theme value and update it. Apply different styles and
-        colors to components based on the selected theme.
+        Q10. Develop a language switcher application using the useContext hook.
+        Create a context to manage the current language (e.g., English or
+        Spanish). Provide buttons to switch between languages. Use the
+        useContext hook to access the current language value. Display different
+        language versions of the application's content.
       </p>
       <div
         style={{
@@ -19,10 +18,10 @@ const EnglishToSpanish = () => {
           justifyContent: "center",
         }}
       >
-        <LangConverter/>
+        <LangConverter />
       </div>
     </>
   );
 };
 
-export default EnglishToSpanish;
+export default LanguageConverter;

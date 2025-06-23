@@ -1,6 +1,5 @@
 import RandomNumberGenerator from "@/components/assignment-2/RandomNumberGenerator";
 
-
 const RandomNumber = () => {
   return (
     <>

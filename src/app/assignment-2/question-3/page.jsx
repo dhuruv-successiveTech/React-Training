@@ -1,4 +1,3 @@
-import { PersonForm } from "@/components/assignment-2";
 import ToDoList from "@/components/assignment-2/ToDoList";
 
 const PersonDetails = () => {
