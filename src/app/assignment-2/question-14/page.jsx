@@ -1,7 +1,6 @@
-import Parent from "@/components/assignment-2/Parent";
-import TaskList from "@/components/assignment-2/TaskList";
+import {TaskList} from "@/components/assignment-2";
 
-const IncrementDecrementCounter = () => {
+const Tasks = () => {
   return (
     <>
       <p className="question">
@@ -26,4 +25,4 @@ const IncrementDecrementCounter = () => {
   );
 };
 
-export default IncrementDecrementCounter;
+export default Tasks;

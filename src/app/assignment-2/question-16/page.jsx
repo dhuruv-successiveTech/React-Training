@@ -1,17 +1,17 @@
-import EmployeeSalary from "@/components/assignment-2/EmployeeSalary";
-import Parent from "@/components/assignment-2/Parent";
-import StudentList from "@/components/assignment-2/StudentList";
-import TaskList from "@/components/assignment-2/TaskList";
+import { EmployeeSalary } from "@/components/assignment-2";
 
 const Employee = () => {
   return (
     <>
       <p className="question">
-        Q15. Create a functional component named StudentList that displays a
-        list of student names.. Define an array of student names as a constant
-        within the component. Use the useMemo hook to memoize the list of
-        student names. Render the list of student names on the screen. Include a
-        button that, when clicked, appends a new student name to the list.
+        Q16. Create a functional component named EmployeeSalary that displays
+        the average salary of a list of employees. Define an array of employee
+        objects, where each object has a name and salary property. Use the
+        useMemo hook to calculate the average salary of employees. Ensure that
+        the useMemo hook has a dependency on the employee data so that it
+        recalculates when the employee data changes. Render the average salary
+        on the screen. Include a button that, when clicked, updates the employee
+        data with new salaries.
       </p>
       <div
         style={{
@@ -21,7 +21,7 @@ const Employee = () => {
           justifyContent: "center",
         }}
       >
-        <EmployeeSalary/>
+        <EmployeeSalary />
       </div>
     </>
   );

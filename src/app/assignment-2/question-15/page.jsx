@@ -1,6 +1,4 @@
-import Parent from "@/components/assignment-2/Parent";
-import StudentList from "@/components/assignment-2/StudentList";
-import TaskList from "@/components/assignment-2/TaskList";
+import {StudentList} from "@/components/assignment-2";
 
 const Student = () => {
   return (

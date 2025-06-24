@@ -1,4 +1,4 @@
-import Theme from "@/components/assignment-2/Theme";
+import {Theme} from "@/components/assignment-2";
 
 const ThemeSwitcher = () => {
   return (

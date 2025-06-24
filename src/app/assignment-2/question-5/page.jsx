@@ -1,4 +1,4 @@
-import CounterWithStep from "@/components/assignment-2/CounterWithStep";
+import {CounterWithStep} from "@/components/assignment-2";
 
 const CounterStep = () => {
   return (

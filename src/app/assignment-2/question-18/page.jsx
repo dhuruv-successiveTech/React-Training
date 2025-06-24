@@ -1,4 +1,4 @@
-import ManageLocalStorage from "@/components/assignment-2/ManageLocalStorage";
+import {ManageLocalStorage} from "@/components/assignment-2";
 
 const LocalStorageHandler = () => {
   return (

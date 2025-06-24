@@ -1,4 +1,4 @@
-import LangConverter from "@/components/assignment-2/LangConverter";
+import {LangConverter} from "@/components/assignment-2";
 
 const LanguageConverter = () => {
   return (

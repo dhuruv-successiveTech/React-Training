@@ -1,4 +1,4 @@
-import VotingApp from "@/components/assignment-2/Vote";
+import {VotingApp} from "@/components/assignment-2";
 
 const Votes = () => {
   return (
