@@ -1,4 +1,4 @@
-import {CounterWithStep} from "@/components/assignment-2";
+import { CounterWithStep } from "@/components/assignment-2";
 
 const CounterStep = () => {
   return (
@@ -19,7 +19,7 @@ const CounterStep = () => {
           justifyContent: "center",
         }}
       >
-        <CounterWithStep/>
+        <CounterWithStep />
       </div>
     </>
   );

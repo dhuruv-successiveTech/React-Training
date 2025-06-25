@@ -6,7 +6,7 @@ const StudentList = () => {
   const [students, setStudents] = useState(["Raj", "Shekhar", "Jitesh"]);
   const [newStudent, setNewStudent] = useState("");
 
-  const memoizedStudents = useMemo(() => students, [students]); 
+  const memoizedStudents = useMemo(() => students, [students]);
   // When students changes, the new Instance will be created
 
   const addStudent = () => {

@@ -6,7 +6,7 @@ export const initialVotes = {
 
 export function voteReducer(state, action) {
   switch (action.type) {
-    case 'VOTE':
+    case "VOTE":
       return {
         ...state,
         [action.option]: state[action.option] + 1,

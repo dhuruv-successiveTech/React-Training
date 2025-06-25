@@ -1,4 +1,4 @@
-import {Cart} from "@/components/assignment-2";
+import { Cart } from "@/components/assignment-2";
 
 const ShoppingCart = () => {
   return (

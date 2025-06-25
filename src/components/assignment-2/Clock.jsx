@@ -13,8 +13,6 @@ const Clock = () => {
     }, 1000);
     return () => clearInterval(id);
   }, []);
-  
-  
 
   return (
     <p style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>

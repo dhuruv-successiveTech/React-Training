@@ -1,4 +1,4 @@
-import {CopyClipboard} from "@/components/assignment-2";
+import { CopyClipboard } from "@/components/assignment-2";
 
 const ClipboardCopy = () => {
   return (
@@ -19,7 +19,7 @@ const ClipboardCopy = () => {
           justifyContent: "center",
         }}
       >
-        <CopyClipboard/>
+        <CopyClipboard />
       </div>
     </>
   );

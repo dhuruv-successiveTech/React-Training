@@ -1,16 +1,16 @@
 "use client";
 
 import { useContext } from "react";
-import { CartContext } from "@/context/CartContext";
+import { CartContext } from "@/context";
 
 const Cart = () => {
   const { cart, AddCart, removeCart } = useContext(CartContext);
 
   const products = [
-    { id: "1", name: "Product 1", price: 10 },
-    { id: "2", name: "Product 2", price: 20 },
-    { id: "3", name: "Product 3", price: 30 },
-    { id: "4", name: "Product 4", price: 40 },
+    { id: Date.now(), name: "Product 1", price: 10 },
+    { id: Date.now(), name: "Product 2", price: 20 },
+    { id: Date.now(), name: "Product 3", price: 30 },
+    { id: Date.now(), name: "Product 4", price: 40 },
   ];
 
   return (
@@ -21,8 +21,8 @@ const Cart = () => {
         <p>Your cart is empty</p>
       ) : (
         <div>
-          {cart.map((item) => (
-            <div key={item.id} style={{ margin: "10px 0" }}>
+          {cart.map((item, index) => (
+            <div key={index} style={{ margin: "10px 0" }}>
               <h3>{item.name}</h3>
               <p>Price: Rs{item.price}</p>
               <p>Quantity: {item.quantity}</p>
@@ -43,8 +43,8 @@ const Cart = () => {
       )}
 
       <h3>Products</h3>
-      {products.map((product) => (
-        <div key={product.id} style={{ margin: "10px 0" }}>
+      {products.map((product, index) => (
+        <div key={index} style={{ margin: "10px 0" }}>
           <h4>{product.name}</h4>
           <p>Price: Rs {product.price}</p>
           <button onClick={() => AddCart(product)}>

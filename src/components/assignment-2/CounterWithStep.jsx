@@ -15,11 +15,16 @@ const CounterWithStep = () => {
     setCount(() => count - parseInt(step));
   };
   return (
-    <div style={{display:"flex", flexDirection:"column", gap:"1rem"}}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
       <label>
-        Step :<input style={{ padding: "0.2rem", fontSize: "1rem" }}onChange={stepHandler} type="number"></input>
+        Step :
+        <input
+          style={{ padding: "0.2rem", fontSize: "1rem" }}
+          onChange={stepHandler}
+          type="number"
+        ></input>
       </label>
-      <div style={{display:"flex", alignItems:"baseline", gap:"1rem"}}>
+      <div style={{ display: "flex", alignItems: "baseline", gap: "1rem" }}>
         <button
           style={{ padding: "0.6rem", fontSize: "1rem" }}
           onClick={decrement}

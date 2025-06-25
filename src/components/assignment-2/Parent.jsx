@@ -1,6 +1,6 @@
-'use client';
-import React, { useState, useCallback } from 'react';
-import Child from './Child';
+"use client";
+import React, { useState, useCallback } from "react";
+import Child from "./Child";
 
 const Parent = () => {
   const [count, setCount] = useState(0);
@@ -15,7 +15,7 @@ const Parent = () => {
   };
 
   return (
-    <div style={{ border: '2px solid black', padding: '20px', margin: '20px' }}>
+    <div style={{ border: "2px solid black", padding: "20px", margin: "20px" }}>
       <h2>Parent Component</h2>
       <Child count={count} onIncrement={incrementCount} onReset={resetCount} />
     </div>

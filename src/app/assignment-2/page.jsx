@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <h1
       style={{
-        margin:"1rem",
+        margin: "1rem",
         display: "flex",
         alignItems: "center",
         gap: "0.5rem",

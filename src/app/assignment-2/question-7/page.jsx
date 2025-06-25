@@ -1,4 +1,4 @@
-import {Notification} from "@/components/assignment-2";
+import { Notification } from "@/components/assignment-2";
 
 const MessageTimer = () => {
   return (
