@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const Clock = () => {
   const [currentTime, setCurrentTime] = useState(
-    new Date(Date.now()).toLocaleTimeString()
+    new Date().toLocaleTimeString()
   );
 
   useEffect(() => {
