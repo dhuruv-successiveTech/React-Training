@@ -7,7 +7,7 @@ const Settings = () => {
   const { loggedIn } = useContext(AuthContext);
   return loggedIn ? (
     <>
-      <h1>This is Profile page</h1>
+      <h1>This is Settings page</h1>
     </>
   ) : (
     redirect("/assignment-3/question-4/Login")

@@ -1,8 +1,5 @@
-
 import "../globals.css";
 import Link from "next/link";
-import data from "./data";
-
 
 export default function RootLayout({ children }) {
   // Define the common button styles as a reusable style object
@@ -25,16 +22,28 @@ export default function RootLayout({ children }) {
     gap: "10px", // space between the buttons
   };
 
+  const data = Array.from({ length: 6 }, (_, i) => ({
+    link: `/assignment-3/question-${i + 1}`,
+    text: `Question ${i + 1}`,
+  }));
+
   return (
     <>
       <div style={wrapperStyle}>
+        <Link href={"/"}>
+          <button
+            style={buttonStyle}
+          >
+            Home
+          </button>
+        </Link>
         {data.map((item, index) => (
           <Link key={index} href={item.link}>
             <button style={buttonStyle}>{item.text}</button>
           </Link>
         ))}
       </div>
-     {children}
+      {children}
     </>
   );
 }
