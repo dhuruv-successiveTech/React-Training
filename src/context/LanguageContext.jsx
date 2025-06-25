@@ -1,5 +1,5 @@
 "use client";
-import { createContext,useState } from "react";
+import { createContext, useState } from "react";
 
 export const LanguageContext = createContext();
 
@@ -7,7 +7,7 @@ const LanguageProvider = ({ children }) => {
   const [currentLang, SetCurrentLang] = useState("English");
 
   const languageConverter = () => {
-    SetCurrentLang((prev)=>prev==="English"?"Spanish":"English");
+    SetCurrentLang((prev) => (prev === "English" ? "Spanish" : "English"));
   };
 
   return (

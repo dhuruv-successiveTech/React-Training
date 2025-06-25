@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import useLocalStorage from '@/hooks/useLocalStorage';
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 const ManageLocalStorage = () => {
-  const { getValue, setValue, remove } = useLocalStorage('AuthType', 'Admin');
+  const { getValue, setValue, remove } = useLocalStorage("AuthType", "Admin");
 
-  const handleSet = () => setValue('Student');
+  const handleSet = () => setValue("Student");
   const handleRemove = () => remove();
 
   return (
@@ -15,5 +15,5 @@ const ManageLocalStorage = () => {
       <button onClick={handleRemove}>Remove AuthType</button>
     </div>
   );
-}
+};
 export default ManageLocalStorage;

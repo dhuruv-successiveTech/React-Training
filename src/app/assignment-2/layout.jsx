@@ -1,9 +1,8 @@
-import ThemeProvider from "@/context/ThemeContext";
+import { ThemeProvider } from "@/context";
 import "../globals.css";
 import Link from "next/link";
-import data from "./data";
-import CartProvider from "@/context/CartContext";
-import LanguageProvider from "@/context/LanguageContext";
+import { CartProvider } from "@/context";
+import { LanguageProvider } from "@/context";
 
 export default function RootLayout({ children }) {
   // Define the common button styles as a reusable style object
@@ -25,10 +24,29 @@ export default function RootLayout({ children }) {
     display: "flex",
     gap: "10px", // space between the buttons
   };
-
+  const data = Array.from({ length: 19 }, (_, i) => ({
+    link: `/assignment-2/question-${i + 1}`,
+    text: `Question ${i + 1}`,
+  }));
   return (
     <>
       <div style={wrapperStyle}>
+        <Link href={"/"}>
+          <button
+            style={{
+              backgroundColor: "blue",
+              color: "white",
+              fontSize: "0.8rem",
+              padding: "16px",
+              margin: "0.1rem",
+              cursor: "pointer",
+              border: "none",
+              borderRadius: "9px",
+            }}
+          >
+            Home
+          </button>
+        </Link>
         {data.map((item, index) => (
           <Link key={index} href={item.link}>
             <button style={buttonStyle}>{item.text}</button>
@@ -36,7 +54,9 @@ export default function RootLayout({ children }) {
         ))}
       </div>
       <ThemeProvider>
-        <CartProvider><LanguageProvider>{children}</LanguageProvider></CartProvider>
+        <CartProvider>
+          <LanguageProvider>{children}</LanguageProvider>
+        </CartProvider>
       </ThemeProvider>
     </>
   );

@@ -1,4 +1,4 @@
-import {PersonForm} from "@/components/assignment-2";
+import { PersonForm } from "@/components/assignment-2";
 
 const PersonDetails = () => {
   return (

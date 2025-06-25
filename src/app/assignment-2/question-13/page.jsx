@@ -1,4 +1,4 @@
-import {Parent} from "@/components/assignment-2";
+import { Parent } from "@/components/assignment-2";
 
 const IncrementDecrementCounter = () => {
   return (

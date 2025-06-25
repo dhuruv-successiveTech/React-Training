@@ -1,4 +1,4 @@
-import {Slideshow} from "@/components/assignment-2";
+import { Slideshow } from "@/components/assignment-2";
 
 const ImageSlideShow = () => {
   return (

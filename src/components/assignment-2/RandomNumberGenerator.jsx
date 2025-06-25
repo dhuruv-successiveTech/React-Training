@@ -9,7 +9,7 @@ const RandomNumberGenerator = () => {
   };
 
   return (
-    <div style={{display:'flex', gap:'1rem'}}>
+    <div style={{ display: "flex", gap: "1rem" }}>
       <button onClick={generateRandom}>Generate Random</button>
       <p>{random}</p>
     </div>

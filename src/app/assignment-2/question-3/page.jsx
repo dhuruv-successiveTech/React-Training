@@ -1,4 +1,4 @@
-import {ToDoList} from "@/components/assignment-2";
+import { ToDoList } from "@/components/assignment-2";
 
 const PersonDetails = () => {
   return (

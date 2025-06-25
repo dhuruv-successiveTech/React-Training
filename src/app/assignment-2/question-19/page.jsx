@@ -1,5 +1,4 @@
-
-import {TimerPage} from "@/components/assignment-2";
+import { TimerPage } from "@/components/assignment-2";
 
 const Employee = () => {
   return (
@@ -20,7 +19,7 @@ const Employee = () => {
           justifyContent: "center",
         }}
       >
-        <TimerPage/>
+        <TimerPage />
       </div>
     </>
   );

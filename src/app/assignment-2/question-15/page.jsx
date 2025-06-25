@@ -1,4 +1,4 @@
-import {StudentList} from "@/components/assignment-2";
+import { StudentList } from "@/components/assignment-2";
 
 const Student = () => {
   return (
@@ -18,7 +18,7 @@ const Student = () => {
           justifyContent: "center",
         }}
       >
-        <StudentList/>
+        <StudentList />
       </div>
     </>
   );
