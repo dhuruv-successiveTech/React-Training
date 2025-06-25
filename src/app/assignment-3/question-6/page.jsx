@@ -1,4 +1,24 @@
-const HomeAbout = () => {
+import Link from "next/link";
+
+const ProductPage = () => {
+  const products = [
+    {
+      id: 1,
+      name: "Motorola Edge 50 neo",
+    },
+    {
+      id: 2,
+      name: "Samsung Galaxy Edge 50",
+    },
+    {
+      id: 3,
+      name: "Sony TV",
+    },
+    {
+      id: 4,
+      name: "Dell lattitude E-7430",
+    },
+  ];
   return (
     <>
       <p className="question">
@@ -9,9 +29,17 @@ const HomeAbout = () => {
         parameter and display them on the detail page. Add a "Go Back" button on
         the detail page to return to the list.
       </p>
-      <div>This is Dashboard</div>
+      <div style={{display:"flex", marginLeft:"1rem", gap:"1rem"}}>
+        {products.map((product, index) => (
+          <p key={index}>
+            <Link href={`/assignment-3/question-6/product/${product.id}`}>
+              <button>{product.name}</button>
+            </Link>
+          </p>
+        ))}
+      </div>
     </>
   );
 };
 
-export default HomeAbout;
+export default ProductPage;
