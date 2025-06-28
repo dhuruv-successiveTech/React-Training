@@ -1,0 +1,18 @@
+export const productItem = [
+    {
+      id: 1,
+      name: "Motorola Edge 50 neo",
+    },
+    {
+      id: 2,
+      name: "Samsung Galaxy Edge 50",
+    },
+    {
+      id: 3,
+      name: "Sony TV",
+    },
+    {
+      id: 4,
+      name: "Dell lattitude E-7430",
+    },
+  ];

@@ -1,24 +1,8 @@
 import Link from "next/link";
+import { productItem } from "./productItem";
 
 const ProductPage = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Motorola Edge 50 neo",
-    },
-    {
-      id: 2,
-      name: "Samsung Galaxy Edge 50",
-    },
-    {
-      id: 3,
-      name: "Sony TV",
-    },
-    {
-      id: 4,
-      name: "Dell lattitude E-7430",
-    },
-  ];
+  
   return (
     <>
       <p className="question">
@@ -30,7 +14,7 @@ const ProductPage = () => {
         the detail page to return to the list.
       </p>
       <div style={{display:"flex", marginLeft:"1rem", gap:"1rem"}}>
-        {products.map((product, index) => (
+        {productItem.map((product, index) => (
           <p key={index}>
             <Link href={`/assignment-3/question-6/product/${product.id}`}>
               <button>{product.name}</button>

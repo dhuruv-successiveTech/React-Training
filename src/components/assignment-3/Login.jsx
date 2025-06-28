@@ -5,46 +5,61 @@ import { AuthContext } from "./AuthContext";
 
 const Login = () => {
   const { setLoggedIn, handleAuth } = useContext(AuthContext);
+
   const myUserName = "Dhuruv";
   const myPassword = "123456";
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
 
-  const submitHandler = (e) => {
+  const [formData, setFormData] = useState({
+    userName: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    const { userName, password } = formData;
 
-    if (userName == myUserName && password == myPassword) {
+    if (userName === myUserName && password === myPassword) {
       setLoggedIn(true);
       handleAuth();
       alert("User Logged in");
+    } else {
+      alert("Invalid credentials");
     }
   };
 
   return (
-    <>
-      <form action="">
-        <label htmlFor="">
-          {" "}
-          UserName
-          <input
-            type="text"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </label>
+    <form onSubmit={handleSubmit}>
+      <label>
+        UserName
+        <input
+          type="text"
+          name="userName"
+          value={formData.userName}
+          onChange={handleChange}
+        />
+      </label>
 
-        <label>
-          {" "}
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-        </label>
-        <button onClick={submitHandler}>Submit</button>
-      </form>
-    </>
+      <label>
+        Password
+        <input
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
   );
 };
 
