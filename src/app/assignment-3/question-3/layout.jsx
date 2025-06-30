@@ -1,4 +1,5 @@
-import "./globals.css";
+import { AuthProvider } from "@/components/assignment-3/AuthContext";
+
 
 export const metadata = {
   title: "Create Next App",
@@ -7,10 +8,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        {children} 
-      </body>
-    </html>
+    <div>
+      <AuthProvider> {children}</AuthProvider>
+    </div>
   );
 }
