@@ -1,6 +1,6 @@
 "use client";
-import { redirect, useParams } from "next/navigation";
-import { products } from "./products";
+import { useParams } from "next/navigation";
+import products from "./products";
 import { useRouter } from "next/navigation";
 
 const ProductPage = () => {

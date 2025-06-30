@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { productItem } from "./productItem";
+import productItem from "./productItem";
 
 const ProductPage = () => {
   
