@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import axios from "axios"; // ✅ Missing import added
+import axios from "axios";
 
 const UserData = ({ data }) => {
   const [user, setUser] = useState(data || []);
