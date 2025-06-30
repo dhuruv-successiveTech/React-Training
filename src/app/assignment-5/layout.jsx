@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
     gap: "10px", // space between the buttons
   };
 
-  const data = Array.from({ length: 6 }, (_, i) => ({
+  const data = Array.from({ length: 16 }, (_, i) => ({
     link: `/assignment-5/question-${i + 1}`,
     text: `Question ${i + 1}`,
   }));
