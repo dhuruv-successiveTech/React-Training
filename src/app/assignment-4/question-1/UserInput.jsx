@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const Input = () => {
+const UserInput = () => {
   const [data, setData] = useState("");
 
   return (
@@ -16,4 +16,4 @@ const Input = () => {
     </>
   );
 };
-export default Input;
+export default UserInput;

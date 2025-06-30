@@ -6,7 +6,7 @@ import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 
-const ModalComponent = () => {
+const MyModal = () => {
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -25,8 +25,7 @@ const ModalComponent = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    handleClose();
-    setShow((prev) => !prev);
+    setShow(true);
   };
 
   const style = {
@@ -86,11 +85,15 @@ const ModalComponent = () => {
             value={formData.address}
             onChange={changeHandler}
           />
-          <Button type="submit"> Submit</Button>
+          <div>
+            {" "}
+            <Button type="submit"> Submit</Button>
+            <Button onClick={handleClose}> Close</Button>
+          </div>
         </Box>
       </Modal>
     </div>
   );
-}
+};
 
-export default ModalComponent;
+export default MyModal;

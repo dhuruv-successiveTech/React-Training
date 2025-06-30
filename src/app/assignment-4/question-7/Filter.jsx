@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const FilterComponent = () => {
+const Filter = () => {
   const myMobiles = [
     "Samsung",
     "Xiaomi",
@@ -39,4 +39,4 @@ const FilterComponent = () => {
   );
 };
 
-export default FilterComponent;
+export default Filter;

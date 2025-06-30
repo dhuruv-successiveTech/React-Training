@@ -19,7 +19,7 @@ const validationSchema = Yup.object({
     .required("Phone is required"),
 });
 
-const FormikComponent = () => {
+const FormikForm = () => {
   // Use Formik for form handling and validation
   const formik = useFormik({
     initialValues: {
@@ -83,4 +83,4 @@ const FormikComponent = () => {
   );
 }
 
-export default FormikComponent;
+export default FormikForm;

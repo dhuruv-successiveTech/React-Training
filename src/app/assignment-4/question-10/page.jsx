@@ -1,4 +1,4 @@
-import FormValidation from "../../../components/assignment-4/FormValidation";
+import { FormValidation } from "@/components/assignment-4";
 
 const FormPage = () => {
   return (
@@ -8,7 +8,7 @@ const FormPage = () => {
         validation. Ensure that error messages are displayed when the user
         enters invalid data.
       </p>
-      <FormValidation/>
+      <FormValidation />
     </>
   );
 };

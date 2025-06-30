@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Child from "./Child";
+import DisplayMessage from "./DisplayMessage";
 
 const Display = () => {
   const [text, setText] = useState("");
@@ -20,7 +20,7 @@ const Display = () => {
         <input type="text" onChange={(e) => setText(e.target.value)} />
       </label>
       <button onClick={showHandler}>{show ? `Hide` : `Show`}</button>
-      {show && <Child />}
+      {show && <DisplayMessage />}
     </>
   );
 };

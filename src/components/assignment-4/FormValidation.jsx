@@ -7,10 +7,12 @@ const FormValidation = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [confPassword, setConfPassword] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(`${userName} logged in successfully`);
+    setSuccess(true);
   };
 
   const isPasswordValid =
@@ -32,10 +34,10 @@ const FormValidation = () => {
     >
       <TextField
         label="Name"
-        variant="outlined"
+        variant="standard"
         value={userName}
         onChange={(e) => setUserName(e.target.value)}
-        error={!userName}
+        required
       />
 
       <TextField
@@ -43,6 +45,7 @@ const FormValidation = () => {
         type="password"
         variant="standard"
         value={password}
+        required
         onChange={(e) => setPassword(e.target.value)}
         helperText={
           password && !isPasswordValid
@@ -57,6 +60,7 @@ const FormValidation = () => {
         type="password"
         variant="standard"
         value={confPassword}
+        required
         onChange={(e) => setConfPassword(e.target.value)}
         helperText={
           confPassword && !isPasswordMatch ? "Passwords do not match" : ""
@@ -67,6 +71,7 @@ const FormValidation = () => {
       <Button type="submit" disabled={!isFormValid}>
         Submit
       </Button>
+      {success && <div>User logged Submitted Successfully</div>}
     </Box>
   );
 };

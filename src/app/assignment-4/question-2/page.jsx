@@ -1,6 +1,6 @@
 import Form from "./Form";
 
-const InputPage = () => {
+const Page = () => {
   return (
     <>
       <p className="question">
@@ -9,9 +9,9 @@ const InputPage = () => {
         component. When the user submits the form, log the form data to the
         console.
       </p>
-      <Form/>
+      <Form />
     </>
   );
 };
 
-export default InputPage;
+export default Page;

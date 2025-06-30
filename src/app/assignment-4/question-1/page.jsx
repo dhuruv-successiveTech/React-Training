@@ -1,6 +1,6 @@
-import Input from "./Input";
+import UserInput from "./UserInput";
 
-const InputPage = () => {
+const Page = () => {
   return (
     <>
       <p className="question">
@@ -9,9 +9,9 @@ const InputPage = () => {
         component's state. When the user types into the input field, the
         component's state should update accordingly.
       </p>
-      <Input />
+      <UserInput />
     </>
   );
 };
 
-export default InputPage;
+export default Page;

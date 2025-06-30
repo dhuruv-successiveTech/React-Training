@@ -5,10 +5,24 @@ import { useState } from "react";
 import { handleAction } from "./submitForm";
 
 const FormPage = () => {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [confPassword, setConfPassword] = useState("");
-  const [formStatus, setFormStatus] = useState("");
+  const [formState, setFormState] = useState({
+    userName: "",
+    password: "",
+    confPassword: "",
+    userStatus: "",
+    passwordStatus: "",
+    confirmStatus: "",
+  });
+  const [success, setSuccess] = useState(false);
+
+  const {
+    userName,
+    password,
+    confPassword,
+    userStatus,
+    passwordStatus,
+    confirmStatus,
+  } = formState;
 
   const isPasswordValid =
     password.length >= 8 &&
@@ -18,13 +32,16 @@ const FormPage = () => {
   const isFormValid =
     userName && password && confPassword && isPasswordValid && isPasswordMatch;
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const result = await handleAction(form);
     console.log(result);
+    setSuccess(true);
+  };
+
+  const updateField = (field, value) => {
+    setFormState((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -41,36 +58,73 @@ const FormPage = () => {
         variant="outlined"
         name="username"
         value={userName}
-        onChange={(e) => setUserName(e.target.value)}
-        error={!!userName && userName.length < 1}
+        onChange={(e) => updateField("userName", e.target.value)}
+        onBlur={() => {
+          if (userName.trim() === "")
+            updateField("userStatus", "Enter username");
+        }}
+        helperText={userName === "" && userStatus ? userStatus : ""}
+        error={userName.trim() === "" && userStatus !== ""}
       />
+
       <TextField
         label="Password"
         type="password"
         name="password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) => {
+          updateField("password", e.target.value);
+          if (passwordStatus) updateField("passwordStatus", "");
+        }}
+        onBlur={() => {
+          if (password.trim() === "")
+            updateField("passwordStatus", "Enter password");
+        }}
         variant="outlined"
         helperText={
-          password && !isPasswordValid
+          passwordStatus
+            ? passwordStatus
+            : password && !isPasswordValid
             ? "Min. 8 characters (include *, &, !, @, #)"
             : ""
         }
-        error={password !== "" && !isPasswordValid}
+        error={
+          (password.trim() === "" && !!passwordStatus) ||
+          (password !== "" && !isPasswordValid)
+        }
       />
+
       <TextField
         label="Confirm Password"
         type="password"
         name="confpassword"
-        onChange={(e) => setConfPassword(e.target.value)}
+        value={confPassword}
+        onChange={(e) => {
+          updateField("confPassword", e.target.value);
+          if (confirmStatus) updateField("confirmStatus", "");
+        }}
+        onBlur={() => {
+          if (confPassword.trim() === "") {
+            updateField("confirmStatus", "Enter confirm password");
+          }
+        }}
         helperText={
-          confPassword && !isPasswordMatch ? "Passwords do not match" : ""
+          confirmStatus
+            ? confirmStatus
+            : confPassword && !isPasswordMatch
+            ? "Passwords do not match"
+            : ""
         }
-        error={confPassword !== "" && !isPasswordMatch}
+        error={
+          (confPassword.trim() === "" && !!confirmStatus) ||
+          (confPassword !== "" && !isPasswordMatch)
+        }
       />
+
       <Button type="submit" disabled={!isFormValid}>
         Submit
       </Button>
+      {success && <>Form submitted successfully</>}
     </Box>
   );
 };

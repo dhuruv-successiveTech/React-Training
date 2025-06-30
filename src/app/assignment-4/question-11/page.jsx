@@ -1,4 +1,4 @@
-import ModalComponent from "@/components/assignment-4/ModalComponent";
+import { MyModal } from "@/components/assignment-4";
 
 const ModalPage = () => {
   return (
@@ -8,7 +8,7 @@ const ModalPage = () => {
         component. Use it to display additional information or capture user
         input within your app.
       </p>
-      <ModalComponent />
+      <MyModal />
     </>
   );
 };

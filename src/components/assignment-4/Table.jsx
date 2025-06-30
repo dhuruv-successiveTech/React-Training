@@ -39,7 +39,7 @@ const rows = [
 
 const paginationModel = { page: 0, pageSize: 5 };
 
-const TableComponent = () => {
+const MyTable = () => {
   return (
     <Paper sx={{ height: 400, width: "100%" }}>
       <DataGrid
@@ -54,4 +54,4 @@ const TableComponent = () => {
   );
 };
 
-export default TableComponent;
+export default MyTable;

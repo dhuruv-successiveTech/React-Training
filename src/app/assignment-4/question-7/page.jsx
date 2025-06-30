@@ -1,4 +1,4 @@
-import FilterComponent from "./FilterComponent";
+import Filter from "./Filter";
 
 const FilterPage = () => {
   return (
@@ -9,7 +9,7 @@ const FilterPage = () => {
         list of items displayed below. The list should dynamically update to
         show only items matching the search query.
       </p>
-      <FilterComponent />
+      <Filter />
     </>
   );
 };
