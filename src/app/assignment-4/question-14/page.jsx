@@ -1,5 +1,6 @@
+import FormPage from "./FormPage";
 
-const FormPage = () => {
+const Form = () => {
   return (
     <>
       <p className="question">
@@ -8,9 +9,9 @@ const FormPage = () => {
         Display a summary of errors if the user attempts to submit an invalid
         form.
       </p>
-
+      <FormPage/>
     </>
   );
 };
 
-export default FormPage;
+export default Form;

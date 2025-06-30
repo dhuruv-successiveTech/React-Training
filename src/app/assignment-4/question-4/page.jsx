@@ -1,16 +1,10 @@
-import PasswordValidation from "./PasswordValidation";
+import PasswordForm from './PasswordForm';
 
-const DisplayPage = () => {
+export default function Page() {
   return (
-    <>
-      <p className="question">
-        Q4. Build a registration form with two password fields. Implement
-        controlled components for both password inputs. Add a validation rule to
-        ensure that the two passwords match before allowing the form submission.
-      </p>
-      <PasswordValidation />
-    </>
+    <div style={{ maxWidth: '500px', margin: '2rem auto' }}>
+      <h1>Password Validation Form</h1>
+      <PasswordForm />
+    </div>
   );
-};
-
-export default DisplayPage;
+}
