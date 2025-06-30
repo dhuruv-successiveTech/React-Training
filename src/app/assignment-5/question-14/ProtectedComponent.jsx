@@ -1,5 +1,5 @@
 
 const ProtectedComponent = () => {
-  return <div>This is a protected component</div>;
+  return <h2>This is a protected component</h2>;
 };
 export default ProtectedComponent;

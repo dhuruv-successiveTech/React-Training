@@ -1,4 +1,4 @@
-import ProtectedComponent from "@/components/assignment-5/ProtectedComponent";
+import ProtectedComponent from "@/app/assignment-5/question-14/ProtectedComponent";
 import withAuth from "./withAuth";
 
 const ProtectedPage = () => {
@@ -6,14 +6,14 @@ const ProtectedPage = () => {
     <div style={{ maxWidth: "600px", margin: "2rem auto" }}>
       <p>
         {" "}
-        Q13. Design and implement a reusable Modal component that allows
-        customization of its content. Provide controls to open, close, and
-        toggle the modal’s visibility. Demonstrate how to use this component to
-        display different types of content within a Next.js application.
+        Q14. Create a higher-order component (HOC) named withAuth that restricts
+        access to a component only to authenticated users. Implement this HOC on
+        a sample component and demonstrate how it protects routes or pages in a
+        Next.js application.
       </p>
-      <ProtectedComponent></ProtectedComponent>
 
+      <ProtectedComponent></ProtectedComponent>
     </div>
   );
-}
-export default withAuth(ProtectedPage)
+};
+export default withAuth(ProtectedPage);

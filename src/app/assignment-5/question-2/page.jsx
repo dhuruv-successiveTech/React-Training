@@ -8,7 +8,7 @@ export default async function UsersPageServer() {
     if (!res.ok) {
       throw new Error("Failed to fetch users");
     }
-    users = await res.json();
+    users = await res?.json();
   } catch (err) {
     console.error(err);
   }
