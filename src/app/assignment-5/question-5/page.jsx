@@ -1,18 +1,19 @@
-
+import axios from "axios";
 const getUserData = async () => {
-  const response = await fetch(
+  const response = await axios.get(
     "https://jsonplaceholder.typicode.com/posts/1"
   );
-  return await response.json();
+  return response.data;
 };
 const ServerSideApi = async () => {
   const data = await getUserData();
   return (
     <>
       <p className="question">
-        Q1. Create a Next.js component using the App Router that fetches data on
-        the server side (SSR) from a public API (e.g., JSONPlaceholder) and
-        displays the results on the page.
+        Q5. Create a Next.js component that fetches data from a public API (like
+        JSONPlaceholder) using Axios and displays the results on the page. Use
+        the App Router conventions and perform the data fetching on the server
+        side.
       </p>
       {data && (
         <>
@@ -21,6 +22,7 @@ const ServerSideApi = async () => {
           <p>Body : {data?.body}</p>
         </>
       )}
+
     </>
   );
 };
