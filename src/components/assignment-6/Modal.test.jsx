@@ -36,7 +36,6 @@ describe("LoginForm", () => {
     await userEvent.type(screen.getByLabelText(/username/i), "wronguser");
     await userEvent.type(screen.getByLabelText(/password/i), "wrongpass");
     await userEvent.click(screen.getByRole("button", { name: /login/i }));
-
     expect(screen.queryByText(/logged in successfully/i)).not.toBeInTheDocument();
   });
 });
