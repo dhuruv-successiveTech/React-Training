@@ -4,10 +4,12 @@ import React, { useState } from 'react';
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+    const [success,setSuccess] = useState(false)
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`${username} logged in successfully`)
+    if(username=="user" && password=="123456"){
+        setSuccess(true);
+    }
   };
 
   return (
@@ -31,6 +33,7 @@ function LoginForm() {
       />
 
       <button type="submit">Login</button>
+      {success && <div>{`${username} logged in successfully`}</div>}
     </form>
   );
 }

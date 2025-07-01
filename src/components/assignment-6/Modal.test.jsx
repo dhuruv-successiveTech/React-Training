@@ -1,27 +1,42 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import ModalComponent from "./Modal";
+import LoginForm from "./LoginForm";
 
-describe("ModalComponent", () => {
+describe("LoginForm", () => {
   beforeEach(() => {
-    render(<ModalComponent />);
+    render(<LoginForm />);
   });
 
-  it("renders open modal button", () => {
-    expect(screen.getByRole("button", { name: /open modal/i })).toBeInTheDocument();
+  it("renders username and password input fields and login button", () => {
+    expect(screen.getByLabelText(/username/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument();
   });
 
-  it("opens the modal when 'Open Modal' button is clicked", async () => {
-    await userEvent.click(screen.getByRole("button", { name: /open modal/i }));
-    expect(screen.getByText(/Modal Content/i)).toBeInTheDocument();
-    expect(screen.getByText(/This is some content inside the modal/i)).toBeInTheDocument();
+  it("updates input fields when user types", async () => {
+    const usernameInput = screen.getByLabelText(/username/i);
+    const passwordInput = screen.getByLabelText(/password/i);
+
+    await userEvent.type(usernameInput, "user");
+    await userEvent.type(passwordInput, "123456");
+
+    expect(usernameInput).toHaveValue("user");
+    expect(passwordInput).toHaveValue("123456");
   });
 
-  it("closes the modal when 'Close' button is clicked", async () => {
-    await userEvent.click(screen.getByRole("button", { name: /open modal/i }));
-    expect(screen.getByText(/Modal Content/i)).toBeInTheDocument();
+  it("shows success message on correct credentials", async () => {
+    await userEvent.type(screen.getByLabelText(/username/i), "user");
+    await userEvent.type(screen.getByLabelText(/password/i), "123456");
+    await userEvent.click(screen.getByRole("button", { name: /login/i }));
 
-    await userEvent.click(screen.getByRole("button", { name: /close/i }));
-    expect(screen.queryByText(/Modal Content/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/user logged in successfully/i)).toBeInTheDocument();
+  });
+
+  it("does not show success message on incorrect credentials", async () => {
+    await userEvent.type(screen.getByLabelText(/username/i), "wronguser");
+    await userEvent.type(screen.getByLabelText(/password/i), "wrongpass");
+    await userEvent.click(screen.getByRole("button", { name: /login/i }));
+
+    expect(screen.queryByText(/logged in successfully/i)).not.toBeInTheDocument();
   });
 });
