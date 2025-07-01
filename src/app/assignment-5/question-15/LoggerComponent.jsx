@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import withLogger from "./withLogger";
 
 const LoggerComponent = () => {

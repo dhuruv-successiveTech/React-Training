@@ -1,5 +1,4 @@
 import ProtectedComponent from "@/app/assignment-5/question-14/ProtectedComponent";
-import withAuth from "./withAuth";
 
 const ProtectedPage = () => {
   return (
@@ -16,4 +15,4 @@ const ProtectedPage = () => {
     </div>
   );
 };
-export default withAuth(ProtectedPage);
+export default ProtectedPage;
