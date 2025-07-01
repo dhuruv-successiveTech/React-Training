@@ -1,3 +1,5 @@
+import LoginForm from "@/components/assignment-6/LoginForm";
+
 const Page = () => {
   return (
     <>
@@ -7,7 +9,7 @@ const Page = () => {
         to verify that the input fields accept user input and the form
         submission works as expected.
       </p>
-      <LoginForm />
+      <LoginForm/>
     </>
   );
 };
