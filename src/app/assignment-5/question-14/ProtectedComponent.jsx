@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 
 const ProtectedComponent = (props) => {
   const { loggedIn, handleAuth, handleLogout } = props;
-  return loggedIn===null ? (
+  return !loggedIn? (
     redirect("/assignment-5/question-14/login")
   ) : (
     <>

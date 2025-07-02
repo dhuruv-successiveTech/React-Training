@@ -6,7 +6,7 @@ const withAuth = (Component) => (props) => {
   const [loggedIn, setLoggedIn] = useState(undefined); 
 
   const handleAuth = () => {
-    !loggedIn && redirect("/assignment-5/question-14/login");
+    
     const user = "Dhuruv";
     localStorage.setItem(
       "authUser",
