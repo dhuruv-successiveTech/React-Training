@@ -1,9 +1,12 @@
 "use client";
+import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const withAuth = (Component) => (props) => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(undefined); 
+
   const handleAuth = () => {
+    !loggedIn && redirect("/assignment-5/question-14/login");
     const user = "Dhuruv";
     localStorage.setItem(
       "authUser",
@@ -11,24 +14,31 @@ const withAuth = (Component) => (props) => {
     );
     setLoggedIn(true);
   };
+
   const handleLogout = () => {
     localStorage.removeItem("authUser");
     setLoggedIn(false);
   };
+
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("authUser"));
     if (storedUser?.type === "Admin") {
       setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
     }
   }, []);
+
+  if (loggedIn === undefined) return null;
 
   return (
     <Component
       {...props}
       loggedIn={loggedIn}
+      setLoggedIn={setLoggedIn}
       handleAuth={handleAuth}
       handleLogout={handleLogout}
-    ></Component>
+    />
   );
 };
 
