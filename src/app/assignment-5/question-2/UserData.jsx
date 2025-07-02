@@ -2,12 +2,13 @@
 
 import React, { useState } from "react";
 
-const UserData = ({ data }) => {
+const UserData = ({ data ,error}) => {
   const [user, setUser] = useState(data || []);
-  const [errorMessage, setErrorMessage] = useState(
-    data ? null : "Data not fetched"
-  );
-
+  const [errorMessage, setErrorMessage] = useState(error);
+  console.log(data);
+  
+  console.log(errorMessage);
+  
   const fetchUserData = async () => {
     try {
       setErrorMessage(null);

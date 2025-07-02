@@ -2,18 +2,18 @@ import UserData from "./UserData";
 
 export default async function UsersPageServer() {
   let users = [];
+  let error = null;
   try {
-    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    const res = await fetch("https://jsonplaceholder.typicode.com/user");
 
     if (!res.ok) {
       throw new Error("Failed to fetch users");
     }
     users = await res?.json();
   } catch (err) {
-    console.error(err);
+    error = "Failed to load users. Please try again later.";
   }
 
-  // Pass data or error to the Client Component
   return (
     <>
       <p>
@@ -24,7 +24,7 @@ export default async function UsersPageServer() {
         page. Additionally, provide a retry button so users can attempt to fetch
         the data again without reloading the entire page.
       </p>
-      <UserData data={users} />;
+      <UserData data={users} error={error} />;
     </>
   );
 }

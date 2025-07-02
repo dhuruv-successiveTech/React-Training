@@ -6,7 +6,7 @@ export default async function UsersPageServer() {
   let error = null;
 
   try {
-    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    const res = await fetch("https://jsonplaceholder.typicode.com/user");
 
     if (!res.ok) {
       throw new Error("Failed to fetch users");
