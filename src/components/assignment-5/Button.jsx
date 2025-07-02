@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export const Button = React.memo((props) => {
+export const Button = (props) => {
   const { buttonType, clickHandlers } = props;
 
   return (
@@ -21,4 +21,4 @@ export const Button = React.memo((props) => {
       {buttonType}
     </button>
   );
-});
+};
