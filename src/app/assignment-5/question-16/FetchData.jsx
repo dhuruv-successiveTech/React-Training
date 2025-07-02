@@ -4,7 +4,7 @@ import withDataFetching from "./withDataFetching";
 
 const FetchData = (props) => {
   const { data } = props;
-
+    
   return (
     <>
       {data.map((item) => (
@@ -13,4 +13,4 @@ const FetchData = (props) => {
     </>
   );
 };
-export default withDataFetching(FetchData);
+export default withDataFetching(FetchData,"https://jsonplaceholder.typicode.com/users");

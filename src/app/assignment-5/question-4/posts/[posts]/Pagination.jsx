@@ -1,19 +1,15 @@
 "use client";
-const { useParams, useRouter } = require("next/navigation");
+import { useRouter } from "next/navigation";
 
-const Pagination = ({ totalPages }) => {
-  const { posts } = useParams();
+const Pagination = ({ currentPage, totalPages }) => {
   const router = useRouter();
-    
-  const currentPage = parseInt(posts);
+
   const handlePageChange = (pageNumber) => {
     router.push(`/assignment-5/question-4/posts/${pageNumber}`);
   };
 
-
-
   return (
-    <div>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <button
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage <= 1}
@@ -21,13 +17,10 @@ const Pagination = ({ totalPages }) => {
         Previous
       </button>
       <p>
-        {" "}
         Page {currentPage} of {totalPages}
       </p>
       <button
-        onClick={() => {
-          handlePageChange(currentPage + 1);
-        }}
+        onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage >= totalPages}
       >
         Next

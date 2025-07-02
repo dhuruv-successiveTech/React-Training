@@ -1,32 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+import { handleSubmitAction } from "./actions";
 
 const UserData = ({ data }) => {
-  const [user, setUser] = useState(data || []);
-  const [errorMessage, setErrorMessage] = useState(
-    data ? null : "Data not fetched"
-  );
-
-  const fetchUserData = async () => {
-    try {
-      setErrorMessage(null);
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      setUser(response?.data || []);
-    } catch (error) {
-      setErrorMessage(error?.message || "Failed to fetch data.");
-      setUser([]);
-    }
+  const handleRetry = async () => {
+    await handleSubmitAction();
   };
-
-  if (errorMessage) {
+  if (data === undefined) {
     return (
       <>
-        <p style={{ color: "red" }}>{errorMessage}</p>
-        <button onClick={fetchUserData}>Retry</button>
+        <p style={{ color: "red" }}>Please Retry</p>
+        <button onClick={handleRetry}>Retry</button>
       </>
     );
   }
@@ -34,7 +19,7 @@ const UserData = ({ data }) => {
   return (
     <>
       <h1>User Data</h1>
-      {user?.map((item) => (
+      {data?.map((item) => (
         <div
           style={{ margin: "1rem", border: "1px solid #ccc", padding: "1rem" }}
           key={item.id}

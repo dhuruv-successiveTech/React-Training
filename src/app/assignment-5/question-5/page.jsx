@@ -1,12 +1,7 @@
-import axios from "axios";
-const getUserData = async () => {
-  const response = await axios.get(
-    "https://jsonplaceholder.typicode.com/posts/1"
-  );
-  return response.data;
-};
+import { handleUserAction } from "./actions";
+
 const ServerSideApi = async () => {
-  const data = await getUserData();
+  const data = await handleUserAction();
   return (
     <>
       <p className="question">

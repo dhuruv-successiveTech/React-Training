@@ -1,48 +1,49 @@
-// app/users/UsersPage.jsx (Client-side component)
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
+import { handleSubmitAction } from "./actions";
+import CircularSize from "./loading";
 
-const UserData = ({ userData, error }) => {
-  const [data, setData] = useState(userData);
-  const [localError, setLocalError] = useState(error);
-
+const UserData = ({ data }) => {
+  const [loading, setLoading] = useState(false);
   const handleRetry = async () => {
-    setLocalError(null);
-    try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      const data = await res.json();
-      setData(data);
-      setLocalError(null); 
-    } catch (err) {
-      setLocalError("Failed to load users. Please try again later.");
-    }
+    setLoading(true);
+    await handleSubmitAction();
+    setLoading(false);
   };
 
-  return (
-    <div>
-      <h1>Users List</h1>
-      {localError && (
-        <div style={{ color: "red", marginBottom: "20px" }}>
-          <p>{localError}</p>
-          <button onClick={handleRetry}>Retry</button>
-        </div>
-      )}
-      <ul>
-        {data && data.length > 0 ? (
-          data.map((user) => (
-            <li key={user.id}>
-              <p>Id : {user.id}</p>
-              <p>Name : {user.name}</p>
-               <p>Email : {user.email}</p>
-               <br />
-            </li>
-          ))
+  if (data === undefined) {
+    return (
+      <>
+        {loading ? (
+          <CircularSize />
         ) : (
-          <li>No users found</li>
+          <>
+            <p style={{ color: "red" }}>Please Retry</p>
+            <button onClick={handleRetry}>Retry</button>
+          </>
         )}
-      </ul>
-    </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <h1>User Data</h1>
+      {data?.map((item) => (
+        <div
+          style={{ margin: "1rem", border: "1px solid #ccc", padding: "1rem" }}
+          key={item.id}
+        >
+          <p>User ID: {item?.id}</p>
+          <p>Name: {item?.name}</p>
+          <p>Username: {item?.username}</p>
+          <p>Address: {item?.address?.street}</p>
+          <p>Phone: {item?.phone}</p>
+          <p>Company: {item?.company?.name}</p>
+        </div>
+      ))}
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import AllPosts from "./AllPosts";
 
 const Posts = async () => {
   return (
@@ -9,8 +10,7 @@ const Posts = async () => {
         and provide controls to navigate between pages. Use the native fetch and
         handle data fetching efficiently within the App Router
       </p>
-      {redirect(`/assignment-5/question-4/posts/1`)}
-
+     <AllPosts/>
       
     </>
   );

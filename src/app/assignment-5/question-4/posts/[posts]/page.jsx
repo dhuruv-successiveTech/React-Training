@@ -1,30 +1,19 @@
-import Pagination from "../Pagination";
+import { handlePostAction } from "../../actions";
+import Pagination from "./Pagination";
 
 const postsPerPage = 10;
 
 const PostPage = async ({ params }) => {
-  const currentPage = parseInt(params.posts) || 1;
-console.log("currentPage", currentPage);
+  const param = await params;
+  const currentPage = parseInt(param.posts) || 1;
 
-  let allPosts = [];
+  const skip = (currentPage - 1) * postsPerPage;
 
-  try {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    if (!res.ok) {
-      throw new Error("Failed to fetch");
-    }
-    allPosts = await res.json();
-  } catch (error) {
-    return <p>Please try again later.</p>;
-  }
-  
-  const totalPages = Math.ceil(allPosts.length / postsPerPage);
-  const start = (currentPage - 1) * postsPerPage;
-  const paginatedPosts = allPosts.slice(start, start + postsPerPage);
-  console.log(start);
-  console.log(paginatedPosts);
+  const data = await handlePostAction(skip, postsPerPage);
 
-  
+  const paginatedPosts = data.posts; 
+  const totalPages = Math.ceil(data.total / postsPerPage);
+
   return (
     <div>
       <h1>Posts - page {currentPage}</h1>
@@ -38,7 +27,7 @@ console.log("currentPage", currentPage);
           </li>
         ))}
       </ul>
-      <Pagination totalPages={totalPages}/>
+      <Pagination currentPage={currentPage} totalPages={totalPages} />
     </div>
   );
 };

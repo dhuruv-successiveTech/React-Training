@@ -1,15 +1,16 @@
 "use client";
 
-import axios from "axios";
-import { useEffect, useState } from "react";
 
-const withDataFetching = (Component) => (props) => {
+import { useEffect, useState } from "react";
+import { handleSubmitAction } from "./actions";
+
+const withDataFetching = (Component,url) => (props) => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
     try {
-      const response = await axios.get("https://jsonplaceholder.typicode.com/users");
-      setData(response?.data);
+      const response = await handleSubmitAction(url)
+      setData(response);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

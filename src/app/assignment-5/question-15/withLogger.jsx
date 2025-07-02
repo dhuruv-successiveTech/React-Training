@@ -1,19 +1,17 @@
-"use client";
-
-import { useEffect } from "react";
+import { useState } from "react";
 
 const withLogger = (Component) => (props) => {
-  useEffect(() => {
-    console.log("Component mounted");
+  const [showLogger, setShowLogger] = useState(true);
 
-    return () => console.log("Component unmounted");
-  }, []);
-  
-  useEffect(() => {
-    console.log("updated");
-  }, [props]);
+  return (
+    <div>
+      <button onClick={() => setShowLogger((prev) => !prev)}>
+        {showLogger ? "Unmount LoggerComponent" : "Mount LoggerComponent"}
+      </button>
 
-  return <Component {...props} />;
+      {showLogger && <Component />}
+    </div>
+  );
 };
 
 export default withLogger;

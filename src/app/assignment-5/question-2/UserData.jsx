@@ -1,36 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import { handleSubmitAction } from "./actions";
 
-const UserData = ({ data ,error}) => {
-  const [user, setUser] = useState(data || []);
-  const [errorMessage, setErrorMessage] = useState(error);
-  console.log(data);
-  
-  console.log(errorMessage);
-  
-  const fetchUserData = async () => {
-    try {
-      setErrorMessage(null);
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      const newData = await response.json();
-      setUser(newData || []);
-    } catch (error) {
-      setErrorMessage(error?.message || "Failed to fetch data.");
-      setUser([]);
-    }
+const UserData = ({ data }) => {
+  const handleRetry = async () => {
+    await handleSubmitAction();
   };
-
-  if (errorMessage) {
+  if (data === undefined) {
     return (
       <>
-        <p style={{ color: "red" }}>{errorMessage}</p>
-        <button onClick={fetchUserData}>Retry</button>
+        <p style={{ color: "red" }}>Please Retry</p>
+        <button onClick={handleRetry}>Retry</button>
       </>
     );
   }
@@ -38,7 +19,7 @@ const UserData = ({ data ,error}) => {
   return (
     <>
       <h1>User Data</h1>
-      {user?.map((item) => (
+      {data?.map((item) => (
         <div
           style={{ margin: "1rem", border: "1px solid #ccc", padding: "1rem" }}
           key={item.id}
