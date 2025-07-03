@@ -19,12 +19,10 @@ const CartProvider = ({ children }) => {
       } else {
         updatedCart.push({ ...item, quantity: 1 }); // Add new item
       }
-
       return updatedCart;
     });
   };
 
-  // Remove item from the cart by id
   const removeCart = (id) => {
     setCart((prev) => prev.filter((item) => item.id !== id)); // Filter out item by id
   };
