@@ -3,7 +3,7 @@
 import useTimer from "@/hooks/useTimer";
 
 export default function TimerPage() {
-  const { seconds, isRunning, start, pause, reset } = useTimer(10); // 10 second timer
+  const { seconds, isRunning, start, pause, reset } = useTimer(10); 
 
   return (
     <div style={{ padding: 30, textAlign: "center", fontFamily: "sans-serif" }}>
