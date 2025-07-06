@@ -21,7 +21,8 @@ const Todos = () => {
         <button onClick={AddTask}>Add Task</button>
         <br />
         <ul>
-          {todos && todos?.map((todo,index) => <li key={index}>{todo.task}</li>)}
+          {todos &&
+            todos?.map((todo, index) => <li key={index}>{todo.task}</li>)}
         </ul>
       </label>
     </>

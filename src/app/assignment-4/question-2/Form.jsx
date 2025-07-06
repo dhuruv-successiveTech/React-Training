@@ -23,7 +23,7 @@ const Form = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(formData);
-    alert("form submitted")
+    alert("form submitted");
   };
 
   return (
@@ -116,7 +116,7 @@ const Form = () => {
           Hindi
         </label>
       </div>
-      <button type="submit" >Submit</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
